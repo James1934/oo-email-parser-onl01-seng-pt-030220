@@ -22,10 +22,6 @@ class EmailParser
   end
 
 
-  ###################
-  # Special Headers #
-  ###################
-
   def from
     header :from
   end
@@ -69,9 +65,6 @@ class EmailParser
   end
 
 
-  ##################
-  # Body Functions #
-  ##################
   def parse_body
     content_type = header 'content-type'
     if content_type && content_type.match(/boundary=(.+)/)
@@ -112,9 +105,6 @@ class EmailParser
   end
 
 
-  #####################
-  # Utility Functions #
-  #####################
   def blank_line?(line)
     line == ''
   end
